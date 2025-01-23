@@ -1,5 +1,5 @@
 import "./App.css";
-import Section from "./components/Input";
+import Combine from "./components/Input";
 
 function App() {
   return (
@@ -7,7 +7,7 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
-      <Section />
+      <Combine />
     </>
   );
 }

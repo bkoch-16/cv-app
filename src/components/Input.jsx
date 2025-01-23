@@ -11,7 +11,8 @@ export function Input({ title, value, onChange, type = "text" }) {
   );
 }
 
-export default function Section() {
+export default function Combine() {
+  const [editToggle, setEditToggle] = useState(true);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
@@ -33,6 +34,71 @@ export default function Section() {
     setLocation(e.target.value);
   }
 
+  const handleSubmit = () => {
+    setEditToggle(false);
+  };
+
+  return (
+    <>
+      <Section
+        name={name}
+        handleNameChange={handleNameChange}
+        email={email}
+        handleEmailChange={handleEmailChange}
+        phone={phone}
+        handlePhoneChange={handlePhoneChange}
+        location={location}
+        handleLocationChange={handleLocationChange}
+        handleSubmit={handleSubmit}
+      />
+      <Output
+        editToggle={editToggle}
+        name={name}
+        handleNameChange={handleNameChange}
+        email={email}
+        handleEmailChange={handleEmailChange}
+        phone={phone}
+        handlePhoneChange={handlePhoneChange}
+        location={location}
+        handleLocationChange={handleLocationChange}
+        handleSubmit={handleSubmit}
+      />
+    </>
+  );
+}
+
+export function Output({
+  editToggle,
+  name,
+  handleNameChange,
+  email,
+  handleEmailChange,
+  phone,
+  handlePhoneChange,
+  location,
+  handleLocationChange,
+  handleSubmit,
+}) {
+  if (!editToggle) {
+    return (
+      <>
+        <span>{name}</span>
+      </>
+    );
+  }
+}
+
+export function Section({
+  name,
+  handleNameChange,
+  email,
+  handleEmailChange,
+  phone,
+  handlePhoneChange,
+  location,
+  handleLocationChange,
+  handleSubmit,
+}) {
   return (
     <>
       <Input title="Full Name" value={name} onChange={handleNameChange} />
@@ -56,6 +122,10 @@ export default function Section() {
         value={location}
         onChange={handleLocationChange}
       />
+      <br />
+      <button type="submit" onClick={handleSubmit}>
+        Submit
+      </button>
     </>
   );
 }
@@ -66,4 +136,28 @@ Input.propTypes = {
   value: PropTypes.node,
   onChange: PropTypes.node,
   type: PropTypes.string,
+};
+
+Section.propTypes = {
+  name: PropTypes.string,
+  handleNameChange: PropTypes.function,
+  email: PropTypes.string,
+  handleEmailChange: PropTypes.function,
+  phone: PropTypes.string,
+  handlePhoneChange: PropTypes.function,
+  location: PropTypes.string,
+  handleLocationChange: PropTypes.function,
+  handleSubmit: PropTypes.function,
+};
+
+Output.propTypes = {
+  name: PropTypes.string,
+  handleNameChange: PropTypes.function,
+  email: PropTypes.string,
+  handleEmailChange: PropTypes.function,
+  phone: PropTypes.string,
+  handlePhoneChange: PropTypes.function,
+  location: PropTypes.string,
+  handleLocationChange: PropTypes.function,
+  handleSubmit: PropTypes.function,
 };
