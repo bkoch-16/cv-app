@@ -524,35 +524,3 @@ export function Section({
     </>
   );
 }
-
-Input.propTypes = {
-  children: PropTypes.node,
-  title: PropTypes.string,
-  value: PropTypes.node,
-  onChange: PropTypes.node,
-  type: PropTypes.string,
-};
-
-Section.propTypes = {
-  name: PropTypes.string,
-  handleNameChange: PropTypes.function,
-  email: PropTypes.string,
-  handleEmailChange: PropTypes.function,
-  phone: PropTypes.string,
-  handlePhoneChange: PropTypes.function,
-  location: PropTypes.string,
-  handleLocationChange: PropTypes.function,
-  handleSubmit: PropTypes.function,
-};
-
-Output.propTypes = {
-  name: PropTypes.string,
-  handleNameChange: PropTypes.function,
-  email: PropTypes.string,
-  handleEmailChange: PropTypes.function,
-  phone: PropTypes.string,
-  handlePhoneChange: PropTypes.function,
-  location: PropTypes.string,
-  handleLocationChange: PropTypes.function,
-  handleSubmit: PropTypes.function,
-};
