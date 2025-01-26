@@ -1,4 +1,3 @@
-import PropTypes from "prop-types";
 import "../styles/input.css";
 import { useState } from "react";
 
@@ -118,8 +117,31 @@ export default function Combine() {
     setJobOne({ ...jobOne, jobName: e.target.value });
   }
 
-  function handleJobOneResponsibilitiesChange(e) {
-    setJobOne({ ...jobOne, responsibilities: e.target.value });
+  function handleJobOneResponsibilityOneChange(e) {
+    const newResp = [...jobOne.responsibilities];
+    newResp[0] = e.target.value;
+    setJobOne({
+      ...jobOne,
+      responsibilities: newResp,
+    });
+  }
+
+  function handleJobOneResponsibilityTwoChange(e) {
+    const newResp = [...jobOne.responsibilities];
+    newResp[1] = e.target.value;
+    setJobOne({
+      ...jobOne,
+      responsibilities: newResp,
+    });
+  }
+
+  function handleJobOneResponsibilityThreeChange(e) {
+    const newResp = [...jobOne.responsibilities];
+    newResp[2] = e.target.value;
+    setJobOne({
+      ...jobOne,
+      responsibilities: newResp,
+    });
   }
 
   function handleJobOneDateChange(e) {
@@ -134,8 +156,31 @@ export default function Combine() {
     setJobTwo({ ...jobTwo, jobName: e.target.value });
   }
 
-  function handleJobTwoResponsibilitiesChange(e) {
-    setJobTwo({ ...jobTwo, responsibilities: e.target.value });
+  function handleJobTwoResponsibilityOneChange(e) {
+    const newResp = [...jobOne.responsibilities];
+    newResp[0] = e.target.value;
+    setJobTwo({
+      ...jobTwo,
+      responsibilities: newResp,
+    });
+  }
+
+  function handleJobTwoResponsibilityTwoChange(e) {
+    const newResp = [...jobTwo.responsibilities];
+    newResp[1] = e.target.value;
+    setJobTwo({
+      ...jobTwo,
+      responsibilities: newResp,
+    });
+  }
+
+  function handleJobTwoResponsibilityThreeChange(e) {
+    const newResp = [...jobTwo.responsibilities];
+    newResp[2] = e.target.value;
+    setJobTwo({
+      ...jobTwo,
+      responsibilities: newResp,
+    });
   }
 
   function handleJobTwoDateChange(e) {
@@ -150,8 +195,31 @@ export default function Combine() {
     setJobThree({ ...jobThree, jobName: e.target.value });
   }
 
-  function handleJobThreeResponsibilitiesChange(e) {
-    setJobThree({ ...jobThree, responsibilities: e.target.value });
+  function handleJobThreeResponsibilityOneChange(e) {
+    const newResp = [...jobThree.responsibilities];
+    newResp[0] = e.target.value;
+    setJobThree({
+      ...jobThree,
+      responsibilities: newResp,
+    });
+  }
+
+  function handleJobThreeResponsibilityTwoChange(e) {
+    const newResp = [...jobThree.responsibilities];
+    newResp[1] = e.target.value;
+    setJobThree({
+      ...jobThree,
+      responsibilities: newResp,
+    });
+  }
+
+  function handleJobThreeResponsibilityThreeChange(e) {
+    const newResp = [...jobThree.responsibilities];
+    newResp[2] = e.target.value;
+    setJobThree({
+      ...jobThree,
+      responsibilities: newResp,
+    });
   }
 
   function handleJobThreeDateChange(e) {
@@ -171,27 +239,16 @@ export default function Combine() {
       <Output
         editToggle={editToggle}
         name={name}
-        handleNameChange={handleNameChange}
         email={email}
-        handleEmailChange={handleEmailChange}
         phone={phone}
-        handlePhoneChange={handlePhoneChange}
         location={location}
-        handleLocationChange={handleLocationChange}
-        handleSubmit={handleSubmit}
         handleEdit={handleEdit}
         schoolOne={schoolOne}
-        handleSchoolOneNameChange={handleSchoolOneNameChange}
-        handleSchoolOneStudyChange={handleSchoolOneStudyChange}
-        handleSchoolOneDateChange={handleSchoolOneDateChange}
         schoolTwo={schoolTwo}
-        handleSchoolTwoNameChange={handleSchoolTwoNameChange}
-        handleSchoolTwoStudyChange={handleSchoolTwoStudyChange}
-        handleSchoolTwoDateChange={handleSchoolTwoDateChange}
         schoolThree={schoolThree}
-        handleSchoolThreeNameChange={handleSchoolThreeNameChange}
-        handleSchoolThreeStudyChange={handleSchoolThreeStudyChange}
-        handleSchoolThreeDateChange={handleSchoolThreeDateChange}
+        jobOne={jobOne}
+        jobTwo={jobTwo}
+        jobThree={jobThree}
       />
     );
   }
@@ -221,18 +278,32 @@ export default function Combine() {
       jobOne={jobOne}
       handleJobOneCompanyChange={handleJobOneCompanyChange}
       handleJobOneTitleChange={handleJobOneTitleChange}
-      handleJobOneResponsibilitiesChange={handleJobOneResponsibilitiesChange}
+      handleJobOneResponsibilityOneChange={handleJobOneResponsibilityOneChange}
+      handleJobOneResponsibilityTwoChange={handleJobOneResponsibilityTwoChange}
+      handleJobOneResponsibilityThreeChange={
+        handleJobOneResponsibilityThreeChange
+      }
       handleJobOneDateChange={handleJobOneDateChange}
       jobTwo={jobTwo}
       handleJobTwoCompanyChange={handleJobTwoCompanyChange}
       handleJobTwoTitleChange={handleJobTwoTitleChange}
-      handleJobTwoResponsibilitiesChange={handleJobTwoResponsibilitiesChange}
+      handleJobTwoResponsibilityOneChange={handleJobTwoResponsibilityOneChange}
+      handleJobTwoResponsibilityTwoChange={handleJobTwoResponsibilityTwoChange}
+      handleJobTwoResponsibilityThreeChange={
+        handleJobTwoResponsibilityThreeChange
+      }
       handleJobTwoDateChange={handleJobTwoDateChange}
       jobThree={jobThree}
       handleJobThreeCompanyChange={handleJobThreeCompanyChange}
       handleJobThreeTitleChange={handleJobThreeTitleChange}
-      handleJobThreeResponsibilitiesChange={
-        handleJobThreeResponsibilitiesChange
+      handleJobThreeResponsibilityOneChange={
+        handleJobThreeResponsibilityOneChange
+      }
+      handleJobThreeResponsibilityTwoChange={
+        handleJobThreeResponsibilityTwoChange
+      }
+      handleJobThreeResponsibilityThreeChange={
+        handleJobThreeResponsibilityThreeChange
       }
       handleJobThreeDateChange={handleJobThreeDateChange}
       j
@@ -243,42 +314,16 @@ export default function Combine() {
 export function Output({
   editToggle,
   name,
-  handleNameChange,
   email,
-  handleEmailChange,
   phone,
-  handlePhoneChange,
   location,
-  handleLocationChange,
-  handleSubmit,
   handleEdit,
   schoolOne,
-  handleSchoolOneNameChange,
-  handleSchoolOneStudyChange,
-  handleSchoolOneDateChange,
   schoolTwo,
-  handleSchoolTwoNameChange,
-  handleSchoolTwoStudyChange,
-  handleSchoolTwoDateChange,
   schoolThree,
-  handleSchoolThreeNameChange,
-  handleSchoolThreeStudyChange,
-  handleSchoolThreeDateChange,
   jobOne,
-  handleJobOneCompanyChange,
-  handleJobOneTitleChange,
-  handleJobOneResponsibilitiesChange,
-  handleJobOneDateChange,
   jobTwo,
-  handleJobTwoCompanyChange,
-  handleJobTwoTitleChange,
-  handleJobTwoResponsibilitiesChange,
-  handleJobTwoDateChange,
   jobThree,
-  handleJobThreeCompanyChange,
-  handleJobThreeTitleChange,
-  handleJobThreeResponsibilitiesChange,
-  handleJobThreeDateChange,
 }) {
   if (!editToggle) {
     return (
@@ -312,6 +357,47 @@ export function Output({
         <span>{schoolThree.studyName}</span>
         <br />
         <span>{schoolThree.studyDate}</span>
+        <br />
+        <h2>Job One</h2>
+        <span>{jobOne.companyName}</span>
+        <br />
+        <span>{jobOne.jobName}</span>
+        <br />
+        <span>{jobOne.responsibilities[0]}</span>
+        <br />
+        <span>{jobOne.responsibilities[1]}</span>
+        <br />
+        <span>{jobOne.responsibilities[2]}</span>
+        <br />
+        <span>{jobOne.date}</span>
+        <br />
+
+        <h2>Job Two</h2>
+        <span>{jobTwo.companyName}</span>
+        <br />
+        <span>{jobTwo.jobName}</span>
+        <br />
+        <span>{jobTwo.responsibilities[0]}</span>
+        <br />
+        <span>{jobTwo.responsibilities[1]}</span>
+        <br />
+        <span>{jobTwo.responsibilities[2]}</span>
+        <br />
+        <span>{jobTwo.date}</span>
+        <br />
+
+        <h2>Job Three</h2>
+        <span>{jobThree.companyName}</span>
+        <br />
+        <span>{jobThree.jobName}</span>
+        <br />
+        <span>{jobThree.responsibilities[0]}</span>
+        <br />
+        <span>{jobThree.responsibilities[1]}</span>
+        <br />
+        <span>{jobThree.responsibilities[2]}</span>
+        <br />
+        <span>{jobThree.date}</span>
         <br />
 
         <button type="button" onClick={handleEdit}>
@@ -347,17 +433,23 @@ export function Section({
   jobOne,
   handleJobOneCompanyChange,
   handleJobOneTitleChange,
-  handleJobOneResponsibilitiesChange,
+  handleJobOneResponsibilityOneChange,
+  handleJobOneResponsibilityTwoChange,
+  handleJobOneResponsibilityThreeChange,
   handleJobOneDateChange,
   jobTwo,
   handleJobTwoCompanyChange,
   handleJobTwoTitleChange,
-  handleJobTwoResponsibilitiesChange,
+  handleJobTwoResponsibilityOneChange,
+  handleJobTwoResponsibilityTwoChange,
+  handleJobTwoResponsibilityThreeChange,
   handleJobTwoDateChange,
   jobThree,
   handleJobThreeCompanyChange,
   handleJobThreeTitleChange,
-  handleJobThreeResponsibilitiesChange,
+  handleJobThreeResponsibilityOneChange,
+  handleJobThreeResponsibilityTwoChange,
+  handleJobThreeResponsibilityThreeChange,
   handleJobThreeDateChange,
 }) {
   return (
@@ -457,8 +549,20 @@ export function Section({
       <br />
       <Input
         title="Responsibilities"
-        value={jobOne.responsibilities}
-        onChange={handleJobOneResponsibilitiesChange}
+        value={jobOne.responsibilities[0]}
+        onChange={handleJobOneResponsibilityOneChange}
+      />
+      <br />
+      <Input
+        title="Responsibilities"
+        value={jobOne.responsibilities[1]}
+        onChange={handleJobOneResponsibilityTwoChange}
+      />
+      <br />
+      <Input
+        title="Responsibilities"
+        value={jobOne.responsibilities[2]}
+        onChange={handleJobOneResponsibilityThreeChange}
       />
       <br />
       <Input
@@ -482,8 +586,20 @@ export function Section({
       <br />
       <Input
         title="Responsibilities"
-        value={jobTwo.responsibilities}
-        onChange={handleJobTwoResponsibilitiesChange}
+        value={jobTwo.responsibilities[0]}
+        onChange={handleJobTwoResponsibilityOneChange}
+      />
+      <br />
+      <Input
+        title="Responsibilities"
+        value={jobTwo.responsibilities[1]}
+        onChange={handleJobTwoResponsibilityTwoChange}
+      />
+      <br />
+      <Input
+        title="Responsibilities"
+        value={jobTwo.responsibilities[2]}
+        onChange={handleJobTwoResponsibilityThreeChange}
       />
       <br />
       <Input
@@ -507,8 +623,20 @@ export function Section({
       <br />
       <Input
         title="Responsibilities"
-        value={jobThree.responsibilities}
-        onChange={handleJobThreeResponsibilitiesChange}
+        value={jobThree.responsibilities[0]}
+        onChange={handleJobThreeResponsibilityOneChange}
+      />
+      <br />
+      <Input
+        title="Responsibilities"
+        value={jobThree.responsibilities[1]}
+        onChange={handleJobThreeResponsibilityTwoChange}
+      />
+      <br />
+      <Input
+        title="Responsibilities"
+        value={jobThree.responsibilities[2]}
+        onChange={handleJobThreeResponsibilityThreeChange}
       />
       <br />
       <Input
