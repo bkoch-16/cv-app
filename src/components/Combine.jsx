@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "../styles/input.css";
 import Output from "./Output";
-import Section from "./Section";
+import InputSection from "./InputSection";
 
 export default function Combine() {
   const [editToggle, setEditToggle] = useState(true);
@@ -246,7 +246,7 @@ export default function Combine() {
     );
   }
   return (
-    <Section
+    <InputSection
       name={name}
       handleNameChange={handleNameChange}
       email={email}

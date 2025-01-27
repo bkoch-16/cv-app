@@ -1,6 +1,6 @@
 import Input from "./Input";
 
-export default function Section({
+export default function InputSection({
   name,
   handleNameChange,
   email,
