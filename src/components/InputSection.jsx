@@ -69,7 +69,8 @@ export default function InputSection({
         onChange={handleLocationChange}
       />
       <br />
-      <h2>School One</h2>
+      <h2>Schools</h2>
+      <h3>School One</h3>
       <Input
         title="Name"
         value={schoolOne.schoolName}
@@ -88,7 +89,7 @@ export default function InputSection({
         onChange={handleSchoolOneDateChange}
       />
       <br />
-      <h2>School Two</h2>
+      <h3>School Two</h3>
       <Input
         title="Name"
         value={schoolTwo.schoolName}
@@ -107,7 +108,7 @@ export default function InputSection({
         onChange={handleSchoolTwoDateChange}
       />
       <br />
-      <h2>School Three</h2>
+      <h3>School Three</h3>
       <Input
         title="Name"
         value={schoolThree.schoolName}
@@ -127,6 +128,7 @@ export default function InputSection({
       />
       <br />
       <h2>Jobs</h2>
+      <h3>Job One</h3>
       <Input
         title="Company"
         value={jobOne.companyName}
@@ -163,7 +165,7 @@ export default function InputSection({
         onChange={handleJobOneDateChange}
       />
       <br />
-      <br />
+      <h3>Job Two</h3>
       <Input
         title="Company"
         value={jobTwo.companyName}
@@ -200,7 +202,7 @@ export default function InputSection({
         onChange={handleJobTwoDateChange}
       />
       <br />
-      <br />
+      <h3>Job Three</h3>
       <Input
         title="Company"
         value={jobThree.companyName}

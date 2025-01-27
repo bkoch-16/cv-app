@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "../styles/input.css";
+import "../styles/combine.css";
 import Output from "./Output";
 import InputSection from "./InputSection";
 
