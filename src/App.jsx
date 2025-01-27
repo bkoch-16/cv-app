@@ -1,5 +1,5 @@
 import "./App.css";
-import Combine from "./components/Input";
+import Combine from "./components/Combine";
 
 function App() {
   return (
