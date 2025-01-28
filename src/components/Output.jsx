@@ -15,27 +15,28 @@ export default function Output({
   if (!editToggle) {
     return (
       <>
-        {(name || email || phone || location) && <h2>General Info</h2>}
         {name && (
           <>
-            <span>{name}</span>
-            <br />
+            <h4>{name}</h4>
           </>
         )}
         {email && (
           <>
+            <h6>Email: </h6>
             <span>{email}</span>
             <br />
           </>
         )}
         {phone && (
           <>
+            <h6>Phone: </h6>
             <span>{phone}</span>
             <br />
           </>
         )}
         {location && (
           <>
+            <h6>Location: </h6>
             <span>{location}</span>
             <br />
           </>
@@ -43,9 +44,15 @@ export default function Output({
 
         {(schoolOne.schoolName ||
           schoolOne.studyName ||
-          schoolOne.studyDate) && <h2>School One</h2>}
+          schoolOne.studyDate) && (
+          <>
+            <hr />
+            <h5>Schools</h5>
+          </>
+        )}
         {schoolOne.schoolName && (
           <>
+            <h6>School: </h6>
             <span>{schoolOne.schoolName}</span>
             <br />
           </>
@@ -53,6 +60,7 @@ export default function Output({
 
         {schoolOne.studyName && (
           <>
+            <h6>Study: </h6>
             <span>{schoolOne.studyName}</span>
             <br />
           </>
@@ -60,15 +68,21 @@ export default function Output({
 
         {schoolOne.studyDate && (
           <>
+            <h6>Dates: </h6>
             <span>{schoolOne.studyDate}</span>
             <br />
           </>
         )}
         {(schoolTwo.schoolName ||
           schoolTwo.studyName ||
-          schoolTwo.studyDate) && <h2>School Two</h2>}
+          schoolTwo.studyDate) && (
+          <>
+            <br />
+          </>
+        )}
         {schoolTwo.schoolName && (
           <>
+            <h6>School: </h6>
             <span>{schoolTwo.schoolName}</span>
             <br />
           </>
@@ -76,6 +90,7 @@ export default function Output({
 
         {schoolTwo.studyName && (
           <>
+            <h6>Study: </h6>
             <span>{schoolTwo.studyName}</span>
             <br />
           </>
@@ -83,15 +98,21 @@ export default function Output({
 
         {schoolTwo.studyDate && (
           <>
+            <h6>Dates: </h6>
             <span>{schoolTwo.studyDate}</span>
             <br />
           </>
         )}
         {(schoolThree.schoolName ||
           schoolThree.studyName ||
-          schoolThree.studyDate) && <h2>School Three</h2>}
+          schoolThree.studyDate) && (
+          <>
+            <br />
+          </>
+        )}
         {schoolThree.schoolName && (
           <>
+            <h6>School: </h6>
             <span>{schoolThree.schoolName}</span>
             <br />
           </>
@@ -99,6 +120,7 @@ export default function Output({
 
         {schoolThree.studyName && (
           <>
+            <h6>Study: </h6>
             <span>{schoolThree.studyName}</span>
             <br />
           </>
@@ -106,6 +128,7 @@ export default function Output({
 
         {schoolThree.studyDate && (
           <>
+            <h6>Dates: </h6>
             <span>{schoolThree.studyDate}</span>
             <br />
           </>
@@ -116,9 +139,15 @@ export default function Output({
           jobOne.responsibilities[0] ||
           jobOne.responsibilities[1] ||
           jobOne.responsibilities[2] ||
-          jobOne.date) && <h2>School One</h2>}
+          jobOne.date) && (
+          <>
+            <hr />
+            <h5>Work Experience</h5>
+          </>
+        )}
         {jobOne.companyName && (
           <>
+            <h6>Company: </h6>
             <span>{jobOne.companyName}</span>
             <br />
           </>
@@ -126,6 +155,7 @@ export default function Output({
 
         {jobOne.jobName && (
           <>
+            <h6>Job Title: </h6>
             <span>{jobOne.jobName}</span>
             <br />
           </>
@@ -133,27 +163,23 @@ export default function Output({
 
         {jobOne.responsibilities[0] && (
           <>
-            <span>{jobOne.responsibilities[0]}</span>
+            <h6>Responsibilities:</h6>
             <br />
-          </>
-        )}
-
-        {jobOne.responsibilities[1] && (
-          <>
-            <span>{jobOne.responsibilities[1]}</span>
-            <br />
-          </>
-        )}
-
-        {jobOne.responsibilities[2] && (
-          <>
-            <span>{jobOne.responsibilities[2]}</span>
-            <br />
+            <ul>
+              <li>{jobOne.responsibilities[0]}</li>
+              {jobOne.responsibilities[1] && (
+                <li>{jobOne.responsibilities[1]}</li>
+              )}
+              {jobOne.responsibilities[2] && (
+                <li>{jobOne.responsibilities[2]}</li>
+              )}
+            </ul>
           </>
         )}
 
         {jobOne.date && (
           <>
+            <h6>Dates: </h6>
             <span>{jobOne.date}</span>
             <br />
           </>
@@ -164,9 +190,14 @@ export default function Output({
           jobTwo.responsibilities[0] ||
           jobTwo.responsibilities[1] ||
           jobTwo.responsibilities[2] ||
-          jobTwo.date) && <h2>Job Two</h2>}
+          jobTwo.date) && (
+          <>
+            <br />
+          </>
+        )}
         {jobTwo.companyName && (
           <>
+            <h6>Company: </h6>
             <span>{jobTwo.companyName}</span>
             <br />
           </>
@@ -174,6 +205,7 @@ export default function Output({
 
         {jobTwo.jobName && (
           <>
+            <h6>Job Title: </h6>
             <span>{jobTwo.jobName}</span>
             <br />
           </>
@@ -181,27 +213,23 @@ export default function Output({
 
         {jobTwo.responsibilities[0] && (
           <>
-            <span>{jobTwo.responsibilities[0]}</span>
+            <h6>Responsibilities:</h6>
             <br />
-          </>
-        )}
-
-        {jobTwo.responsibilities[1] && (
-          <>
-            <span>{jobTwo.responsibilities[1]}</span>
-            <br />
-          </>
-        )}
-
-        {jobTwo.responsibilities[2] && (
-          <>
-            <span>{jobTwo.responsibilities[2]}</span>
-            <br />
+            <ul>
+              <li>{jobTwo.responsibilities[0]}</li>
+              {jobTwo.responsibilities[1] && (
+                <li>{jobTwo.responsibilities[1]}</li>
+              )}
+              {jobTwo.responsibilities[2] && (
+                <li>{jobTwo.responsibilities[2]}</li>
+              )}
+            </ul>
           </>
         )}
 
         {jobTwo.date && (
           <>
+            <h6>Dates: </h6>
             <span>{jobTwo.date}</span>
             <br />
           </>
@@ -212,9 +240,14 @@ export default function Output({
           jobThree.responsibilities[0] ||
           jobThree.responsibilities[1] ||
           jobThree.responsibilities[2] ||
-          jobThree.date) && <h2>Job Three</h2>}
+          jobThree.date) && (
+          <>
+            <br />
+          </>
+        )}
         {jobThree.companyName && (
           <>
+            <h6>Company: </h6>
             <span>{jobThree.companyName}</span>
             <br />
           </>
@@ -222,6 +255,7 @@ export default function Output({
 
         {jobThree.jobName && (
           <>
+            <h6>Job Title: </h6>
             <span>{jobThree.jobName}</span>
             <br />
           </>
@@ -229,29 +263,26 @@ export default function Output({
 
         {jobThree.responsibilities[0] && (
           <>
-            <span>{jobThree.responsibilities[0]}</span>
+            <h6>Responsibilities:</h6>
             <br />
-          </>
-        )}
-
-        {jobThree.responsibilities[1] && (
-          <>
-            <span>{jobThree.responsibilities[1]}</span>
-            <br />
-          </>
-        )}
-
-        {jobThree.responsibilities[2] && (
-          <>
-            <span>{jobThree.responsibilities[2]}</span>
-            <br />
+            <ul>
+              <li>{jobThree.responsibilities[0]}</li>
+              {jobThree.responsibilities[1] && (
+                <li>{jobThree.responsibilities[1]}</li>
+              )}
+              {jobThree.responsibilities[2] && (
+                <li>{jobThree.responsibilities[2]}</li>
+              )}
+            </ul>
           </>
         )}
 
         {jobThree.date && (
           <>
+            <h6>Dates: </h6>
             <span>{jobThree.date}</span>
             <br />
+            <hr />
           </>
         )}
 
